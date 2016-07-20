@@ -30,7 +30,7 @@ module Puppet
       def self.config_hash(hash, indent=2)
         txt = "{\n"
         hash.sort_by { |key, value| key }.each do |key, value|
-          txt += "%s%s = %s\n" % [ ' ' * indent, config_value(key), config_value(value, indent) ]
+          txt += "%s%s = %s\n" % [ ' ' * indent, key, config_value(value, indent) ]
         end
         txt += '%s}' % (' ' * (indent-2))
       end

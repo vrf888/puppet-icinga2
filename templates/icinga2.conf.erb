@@ -43,8 +43,11 @@ include <plugins>
 
 ## For SNMP checks
 include <manubulon>
+include <plugins-contrib>
+include <windows-plugins>
+include <nscp>
 
-/**
+  /**
  * The features-available directory contains a number of configuration
  * files for features which can be enabled and disabled using the
  * icinga2-enable-feature / icinga2-disable-feature tools. These two tools work by creating
@@ -58,11 +61,6 @@ include "features-enabled/*.conf"
  * directory. Each of these files must have the file extension ".conf".
  */
 include_recursive "conf.d"
-
-/**
- * Include all .conf files in the objects/ directory too:
- */
-include_recursive "objects"
 
 /**
  * The repository.d directory contains all configuration objects

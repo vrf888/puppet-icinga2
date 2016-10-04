@@ -16,11 +16,11 @@ describe 'icinga2::object::apiuser' do
 
       let(:title) { 'testuser' }
 
-      object_file = '/etc/icinga2/objects/apiusers/testuser.conf'
+      object_file = '/etc/icinga2/repository.d/apiusers/testuser.conf'
       it { should contain_icinga2__object__apiuser('testuser') }
       it { should contain_file(object_file).with({
             :ensure => 'file',
-            :path => '/etc/icinga2/objects/apiusers/testuser.conf',
+            :path => '/etc/icinga2/repository.d/apiusers/testuser.conf',
             :content => /object ApiUser "testuser"/,
           }) }
       it { should contain_file(object_file).with_content(/^\s*permissions = /) }
@@ -43,11 +43,11 @@ describe 'icinga2::object::apiuser' do
         }
       end
 
-      object_file = '/etc/icinga2/objects/apiusers/testuser2.conf'
+      object_file = '/etc/icinga2/repository.d/apiusers/testuser2.conf'
       it { should contain_icinga2__object__apiuser('testuser2') }
       it { should contain_file(object_file).with({
             :ensure => 'file',
-            :path => '/etc/icinga2/objects/apiusers/testuser2.conf',
+            :path => '/etc/icinga2/repository.d/apiusers/testuser2.conf',
             :content => /object ApiUser "testuser2"/,
           }) }
       it { should contain_file(object_file).with_content(/^\s*permissions = /) }

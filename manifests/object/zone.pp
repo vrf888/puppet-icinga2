@@ -12,7 +12,7 @@ define icinga2::object::zone(
   $endpoints  = undef,
   $global     = false,
   $parent     = undef,
-  $target_dir = '/etc/icinga2/objects/zones',
+  $target_dir = '/etc/icinga2/repository.d/zones',
   $file_name  = "${name}.conf",
 ) {
 

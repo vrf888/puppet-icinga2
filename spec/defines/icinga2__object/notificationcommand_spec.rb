@@ -37,7 +37,7 @@ describe 'icinga2::object::notificationcommand' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/notificationcommands/testnotificationcommand.conf'
+    object_file = '/etc/icinga2/repository.d/notificationcommands/testnotificationcommand.conf'
     it { should contain_icinga2__object__notificationcommand('testnotificationcommand') }
     it { should contain_file(object_file).with_content(/^\s*command = \[ PluginDir \+ "testcommand1" \]$/) }
 
@@ -54,7 +54,7 @@ describe 'icinga2::object::notificationcommand' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/notificationcommands/testnotificationcommand.conf'
+    object_file = '/etc/icinga2/repository.d/notificationcommands/testnotificationcommand.conf'
     it { should contain_icinga2__object__notificationcommand('testnotificationcommand') }
     it { should contain_file(object_file).with_content(/^\s*command = \[ PluginDir \+ "testcommand1", PluginDir \+ "testcommand2" \]$/) }
 

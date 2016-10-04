@@ -37,7 +37,7 @@ describe 'icinga2::object::checkcommand' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/checkcommands/testcheckcommand.conf'
+    object_file = '/etc/icinga2/repository.d/checkcommands/testcheckcommand.conf'
     it { should contain_icinga2__object__checkcommand('testcheckcommand') }
     it { should contain_file(object_file).with_content(/^\s*command = \[ PluginDir \+ "testcommand1" \]$/) }
 
@@ -54,7 +54,7 @@ describe 'icinga2::object::checkcommand' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/checkcommands/testcheckcommand.conf'
+    object_file = '/etc/icinga2/repository.d/checkcommands/testcheckcommand.conf'
     it { should contain_icinga2__object__checkcommand('testcheckcommand') }
     it { should contain_file(object_file).with_content(/^\s*command = \[ PluginDir \+ "testcommand1", "argument1", "argument2" \]$/) }
 
@@ -72,7 +72,7 @@ describe 'icinga2::object::checkcommand' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/checkcommands/testcheckcommand.conf'
+    object_file = '/etc/icinga2/repository.d/checkcommands/testcheckcommand.conf'
     it { should contain_icinga2__object__checkcommand('testcheckcommand') }
     it { should contain_file(object_file).with_content(/^\s*command = \[ "\/usr\/bin\/sudo", PluginDir \+ "testcommand1", "testcommand2" \]$/) }
 

@@ -37,11 +37,11 @@ describe 'icinga2::object::user' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/users/testuser.conf'
+    object_file = '/etc/icinga2/repository.d/users/testuser.conf'
     it { should contain_icinga2__object__user('testuser') }
     it { should contain_file(object_file).with({
           :ensure => 'file',
-          :path => '/etc/icinga2/objects/users/testuser.conf',
+          :path => '/etc/icinga2/repository.d/users/testuser.conf',
           :content => /template User "testuser"/,
         }) }
     it { should_not contain_file(object_file).with_content(/^\s*import "testuser"$/) }
@@ -62,11 +62,11 @@ describe 'icinga2::object::user' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/users/testuser.conf'
+    object_file = '/etc/icinga2/repository.d/users/testuser.conf'
     it { should contain_icinga2__object__user('testuser') }
     it { should contain_file(object_file).with({
           :ensure => 'file',
-          :path => '/etc/icinga2/objects/users/testuser.conf',
+          :path => '/etc/icinga2/repository.d/users/testuser.conf',
           :content => /template User "testuser"/,
         }) }
     it { should_not contain_file(object_file).with_content(/^\s*import "testuser"$/) }

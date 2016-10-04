@@ -13,7 +13,7 @@ define icinga2::object::checkresultreader (
   $ensure                       = 'file',
   $object_checkresultreadername = $name,
   $spool_dir                    = undef,
-  $target_dir                   = '/etc/icinga2/objects/checkresultreaders',
+  $target_dir                   = '/etc/icinga2/repository.d/checkresultreaders',
   $target_file_name             = "${name}.conf",
   $target_file_ensure           = file,
   $target_file_owner            = $::icinga2::config_owner,

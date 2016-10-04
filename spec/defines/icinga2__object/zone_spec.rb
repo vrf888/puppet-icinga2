@@ -31,7 +31,7 @@ describe 'icinga2::object::zone' do
       it { should contain_icinga2__object__zone('testzone') }
       it { should contain_file('icinga2 object zone testzone').with({
             :ensure => 'file',
-            :path => '/etc/icinga2/objects/zones/testzone.conf',
+            :path => '/etc/icinga2/repository.d/zones/testzone.conf',
             :content => /object Zone "testzone"/,
           }) }
       it { should contain_file('icinga2 object zone testzone').with_content(/^\s*endpoints = \[\n\s+"endpoint1",\n\s+"endpoint2",\n\s+\]$/) }
@@ -65,7 +65,7 @@ describe 'icinga2::object::zone' do
       it { should contain_icinga2__object__zone('testzone') }
       it { should contain_file('icinga2 object zone testzone').with({
             :ensure => 'file',
-            :path => '/etc/icinga2/objects/zones/testzone.conf',
+            :path => '/etc/icinga2/repository.d/zones/testzone.conf',
             :content => /object Zone "testzone"/,
           }) }
       it { should contain_file('icinga2 object zone testzone').with_content(/^\s*endpoints = \[\n\s+"endpoint1",\n\s+"endpoint2",\n\s+\]$/) }
@@ -95,7 +95,7 @@ describe 'icinga2::object::zone' do
       it { should contain_icinga2__object__zone('global-zone') }
       it { should contain_file('icinga2 object zone global-zone').with({
             :ensure => 'file',
-            :path => '/etc/icinga2/objects/zones/global-zone.conf',
+            :path => '/etc/icinga2/repository.d/zones/global-zone.conf',
             :content => /object Zone "global-zone"/,
           }) }
       it { should contain_file('icinga2 object zone global-zone').without_content(/^\s*endpoints = /) }

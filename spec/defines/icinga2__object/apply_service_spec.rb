@@ -13,11 +13,11 @@ describe 'icinga2::object::apply_service', :type => :define do
 
       let(:title) { 'check_http' }
 
-      object_file = '/etc/icinga2/objects/applys/check_http.conf'
+      object_file = '/etc/icinga2/repository.d/applys/check_http.conf'
       it { should contain_icinga2__object__apply_service('check_http') }
       it { should contain_file(object_file).with({
                                                      :ensure => 'file',
-                                                     :path => '/etc/icinga2/objects/applys/check_http.conf',
+                                                     :path => '/etc/icinga2/repository.d/applys/check_http.conf',
                                                      :content => /apply Service "check_http"/,
                                                  }) }
       it { should contain_file(object_file).with_content(/^\s*import "generic-service"$/) }
@@ -39,11 +39,11 @@ describe 'icinga2::object::apply_service', :type => :define do
 
       let(:title) { 'check_http' }
 
-      object_file = '/etc/icinga2/objects/applys/check_http.conf'
+      object_file = '/etc/icinga2/repository.d/applys/check_http.conf'
       it { should contain_icinga2__object__apply_service('check_http') }
       it { should contain_file(object_file).with({
                                                      :ensure => 'file',
-                                                     :path => '/etc/icinga2/objects/applys/check_http.conf',
+                                                     :path => '/etc/icinga2/repository.d/applys/check_http.conf',
                                                      :content => /apply Service "check_http"/,
                                                  }) }
       it { should contain_file(object_file).with_content(/^\s*import "generic-service"$/) }
@@ -69,11 +69,11 @@ describe 'icinga2::object::apply_service', :type => :define do
 
       let(:title) { 'check_http' }
 
-      object_file = '/etc/icinga2/objects/applys/check_http.conf'
+      object_file = '/etc/icinga2/repository.d/applys/check_http.conf'
       it { should contain_icinga2__object__apply_service('check_http') }
       it { should contain_file(object_file).with({
                                                      :ensure => 'file',
-                                                     :path => '/etc/icinga2/objects/applys/check_http.conf',
+                                                     :path => '/etc/icinga2/repository.d/applys/check_http.conf',
                                                      :content => /apply Service "check_http"/,
                                                  }) }
       it { should contain_file(object_file).with_content(/^\s*import "generic-service"$/) }

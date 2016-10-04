@@ -37,11 +37,11 @@ describe 'icinga2::object::service' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/services/testservice.conf'
+    object_file = '/etc/icinga2/repository.d/services/testservice.conf'
     it { should contain_icinga2__object__service('testservice') }
     it { should contain_file(object_file).with({
           :ensure => 'file',
-          :path => '/etc/icinga2/objects/services/testservice.conf',
+          :path => '/etc/icinga2/repository.d/services/testservice.conf',
           :content => /template Service "testservice"/,
         }) }
     it { should_not contain_file(object_file).with_content(/^\s*import "testservice"$/) }
@@ -62,11 +62,11 @@ describe 'icinga2::object::service' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/services/testservice.conf'
+    object_file = '/etc/icinga2/repository.d/services/testservice.conf'
     it { should contain_icinga2__object__service('testservice') }
     it { should contain_file(object_file).with({
           :ensure => 'file',
-          :path => '/etc/icinga2/objects/services/testservice.conf',
+          :path => '/etc/icinga2/repository.d/services/testservice.conf',
           :content => /template Service "testservice"/,
         }) }
     it { should_not contain_file(object_file).with_content(/^\s*import "testservice"$/) }
@@ -87,7 +87,7 @@ describe 'icinga2::object::service' do
       }
     end
 
-    object_file = '/etc/icinga2/objects/services/testservice.conf'
+    object_file = '/etc/icinga2/repository.d/services/testservice.conf'
     it { should contain_icinga2__object__service('testservice') }
     it { should contain_file(object_file).with_content(/^\s*import "generic-service"$/) }
     it { should contain_file(object_file).with_content(/^\s*command_endpoint = "testservice.example.com"$/) }
